@@ -1,4 +1,5 @@
 from data_preparation import read_repo_data
+from intelligent_chunking import process_documents_intelligent, setup_llm_client
 
 
 def sliding_window(seq, size, step):
@@ -20,25 +21,34 @@ def sliding_window(seq, size, step):
     result = []
     for i in range(0, n, step):
         chunk = seq[i:i+size]
-        result.append({'start': i, 'chunk': chunk})
+        result.append({'start': i, 'content': chunk})
         if i + size >= n:
             break
 
     return result
 
 
-def chunk_documents(docs, chunk_size=2000, step_size=1000):
+def chunk_documents(docs, method='intelligent', provider='groq', chunk_size=2000, step_size=1000):
     """
-    Chunk multiple documents using sliding window approach.
+    Chunk multiple documents using either intelligent or sliding window approach.
     
     Args:
         docs: List of document dictionaries with 'content' field
-        chunk_size: Size of each chunk in characters
-        step_size: Step size between chunks
+        method: 'intelligent' or 'sliding_window'
+        provider: 'groq' or 'openai' (for intelligent chunking)
+        chunk_size: Size of each chunk in characters (for sliding window)
+        step_size: Step size between chunks (for sliding window)
     
     Returns:
         List of chunked documents with metadata preserved
     """
+    if method == 'intelligent':
+        try:
+            return process_documents_intelligent(docs, provider=provider)
+        except Exception as e:
+            print(f"Intelligent chunking failed, falling back to sliding window: {e}")
+            # Continue to sliding window fallback below
+    
     all_chunks = []
     
     for doc in docs:
@@ -54,6 +64,7 @@ def chunk_documents(docs, chunk_size=2000, step_size=1000):
         for chunk in chunks:
             # Add document metadata to each chunk
             chunk.update(doc_copy)
+            chunk['chunking_method'] = 'sliding_window'
         
         all_chunks.extend(chunks)
     
@@ -70,7 +81,8 @@ if __name__ == '__main__':
     print(f"✓ Retrieved {len(docs)} documents")
     
     print("\nChunking documents...")
-    chunks = chunk_documents(docs, chunk_size=2000, step_size=1000)
+    # By default uses intelligent chunking if GROQ_API_KEY is set
+    chunks = chunk_documents(docs, method='intelligent')
     print(f"✓ Created {len(chunks)} chunks")
     
     # Display sample chunk
@@ -80,7 +92,11 @@ if __name__ == '__main__':
         print("="*60)
         sample = chunks[0]
         print(f"Filename: {sample.get('filename', 'N/A')}")
-        print(f"Start position: {sample.get('start', 'N/A')}")
-        print(f"Chunk length: {len(sample.get('chunk', ''))}")
-        print(f"\nContent preview:\n{sample.get('chunk', '')[:200]}...")
+        print(f"Chunking Method: {sample.get('chunking_method', 'N/A')}")
+        
+        # Use standardized 'content' key
+        content = sample.get('content') or sample.get('section') or ''
+        
+        print(f"Content length: {len(content)}")
+        print(f"\nContent preview:\n{content[:200]}...")
         print("="*60)

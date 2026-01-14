@@ -1,0 +1,191 @@
+[
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Introduction to Task Manager App\n\nA React-based task management application that allows users to create, edit, delete, and track tasks with due dates and completion status. The app features task management, user experience enhancements, form validation, and data management.",
+    "content_length": 277,
+    "doc_index": 0,
+    "chunk_index": 0,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Task Management Features\n\nThe app allows users to create tasks with title, description, and due date, edit existing tasks with inline editing, delete tasks with confirmation, and toggle completion status with one click. Task statistics, visual feedback, loading states, and error handling are also included.",
+    "content_length": 310,
+    "doc_index": 0,
+    "chunk_index": 1,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## User Experience Features\n\nThe app provides task statistics, visual feedback for completed and incomplete tasks, loading states during API operations, and comprehensive error handling and validation. These features enhance the overall user experience and provide a seamless interaction with the application.",
+    "content_length": 309,
+    "doc_index": 0,
+    "chunk_index": 2,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Form Validation Rules\n\nThe app enforces form validation rules, including required title and description, due date validation to prevent past dates for incomplete tasks, and real-time validation to clear errors as the user types. These rules ensure that tasks are created and edited with valid data.",
+    "content_length": 301,
+    "doc_index": 0,
+    "chunk_index": 3,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Data Management\n\nThe app uses optimistic updates for immediate UI updates, auto-refreshes tasks after creation or editing, and detects conflicts during concurrent edits. These features ensure that the application provides a responsive and reliable data management experience.",
+    "content_length": 278,
+    "doc_index": 0,
+    "chunk_index": 4,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Technical Details\n\nThe app consists of components such as App, TaskCreationForm, and TaskEditForm. It integrates with a RESTful API using GET, POST, PUT, and DELETE operations, and handles errors and status codes properly. The app also uses React hooks for local state management and separates form and display logic.",
+    "content_length": 320,
+    "doc_index": 0,
+    "chunk_index": 5,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Installation and Setup\n\nTo install and set up the app, clone the repository, install dependencies using npm install, and start the development server using npm start. Ensure that the backend API is running on http://localhost:5000.",
+    "content_length": 234,
+    "doc_index": 0,
+    "chunk_index": 6,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Usage\n\nTo use the app, create a task by filling out the form, edit a task by clicking the \"Edit\" button, complete a task by clicking \"Mark Complete\", and delete a task by clicking \"Delete\" and confirming.",
+    "content_length": 207,
+    "doc_index": 0,
+    "chunk_index": 7,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## API Requirements\n\nThe app expects a backend API with endpoints for retrieving all tasks, creating new tasks, getting specific tasks, updating tasks, and deleting tasks. The API should return task objects with id, title, description, due date, completed status, and user id.",
+    "content_length": 276,
+    "doc_index": 0,
+    "chunk_index": 8,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Task Manager API Introduction\n\nA RESTful API for managing tasks and users built with Node.js, Express, and PostgreSQL. The API features task management, data management, and user integration.",
+    "content_length": 194,
+    "doc_index": 0,
+    "chunk_index": 9,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Task Management API Features\n\nThe API allows users to create tasks with title, description, due date, and user assignment, view tasks, update tasks with optimistic concurrency control, delete tasks with validation and error handling, and mark tasks as complete or incomplete with automatic timestamp tracking.",
+    "content_length": 312,
+    "doc_index": 0,
+    "chunk_index": 10,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Data Management API Features\n\nThe API integrates tasks with users, tracks creation and update timestamps, validates task fields, and sanitizes input data. These features ensure that the API provides a robust and reliable data management experience.",
+    "content_length": 251,
+    "doc_index": 0,
+    "chunk_index": 11,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## API Endpoints\n\nThe API provides endpoints for getting all tasks, getting specific tasks, creating new tasks, updating existing tasks, and deleting tasks. Each endpoint uses a specific HTTP method and returns a response with relevant data.",
+    "content_length": 241,
+    "doc_index": 0,
+    "chunk_index": 12,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table.",
+    "content_length": 191,
+    "doc_index": 0,
+    "chunk_index": 13,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Validation Rules\n\nThe API enforces validation rules for task title, description, due date, and user id. These rules ensure that tasks are created and updated with valid data.",
+    "content_length": 177,
+    "doc_index": 0,
+    "chunk_index": 14,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Error Handling\n\nThe API handles errors using HTTP status codes, including 400 for bad requests, 404 for resource not found, 409 for conflicts, and 500 for internal server errors.",
+    "content_length": 181,
+    "doc_index": 0,
+    "chunk_index": 15,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Concurrency Control\n\nThe API uses optimistic locking with timestamp comparison to prevent conflicting updates when multiple users modify the same task.",
+    "content_length": 154,
+    "doc_index": 0,
+    "chunk_index": 16,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Tech Stack\n\nThe API is built using Node.js, Express.js, and PostgreSQL, with additional libraries for connection pooling, environment configuration, and CORS enablement.",
+    "content_length": 172,
+    "doc_index": 0,
+    "chunk_index": 17,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/README.md",
+    "content": "## Setup and Configuration\n\nTo set up the API, install dependencies, configure environment variables, set up the PostgreSQL database, and run the server. The default port is 5000, but it can be configured using the PORT environment variable.",
+    "content_length": 241,
+    "doc_index": 0,
+    "chunk_index": 18,
+    "total_chunks": 19,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/client/README.md",
+    "content": "## Introduction to React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Currently, two official plugins are available: [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh and [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.",
+    "content_length": 488,
+    "doc_index": 1,
+    "chunk_index": 0,
+    "total_chunks": 2,
+    "chunking_method": "intelligent_groq"
+  },
+  {
+    "filename": "task-manager-app-main/client/README.md",
+    "content": "## Expanding ESLint Configuration\n\nIf you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.",
+    "content_length": 377,
+    "doc_index": 1,
+    "chunk_index": 1,
+    "total_chunks": 2,
+    "chunking_method": "intelligent_groq"
+  }
+]

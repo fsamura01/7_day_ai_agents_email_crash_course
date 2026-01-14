@@ -1,3 +1,9 @@
+---
+title: Project Scripts
+description: Core scripts for fetching and processing GitHub repository documentation.
+status: functional
+---
+
 # Project Scripts
 
 This directory contains the core scripts for fetching and processing GitHub repository documentation.

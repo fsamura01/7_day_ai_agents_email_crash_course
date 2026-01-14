@@ -1,0 +1,32 @@
+Fetching data from fsamura01/task-manager-app...
+Retrieved 3 documents
+
+Chunking documents (size=2000, step=1000)...
+
+Processing documents:   0%|          | 0/3 [00:00<?, ?it/s]
+Processing documents:  33%|###3      | 1/3 [00:02<00:05,  2.56s/it]
+Processing documents:  67%|######6   | 2/3 [00:03<00:01,  1.33s/it]
+Processing documents: 100%|##########| 3/3 [00:03<00:00,  1.01s/it]
+Created 23 chunks
+
+======================================================================
+STATISTICS
+======================================================================
+Total chunks: 23
+Total characters: 6,977
+Average chunk size: 303 characters
+
+======================================================================
+SAMPLE CHUNK
+======================================================================
+Filename: task-manager-app-main/README.md
+Start position: N/A
+Content length: 277
+
+Content preview:
+## Introduction to Task Manager App
+
+A React-based task management application that allows users to create, edit, delete, and track tasks with due dates and completion status. The app features task management, user experience enhancements, form validation, and data management....
+======================================================================
+
+Pipeline completed successfully!
