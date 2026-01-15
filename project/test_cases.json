@@ -1,0 +1,230 @@
+[
+  {
+    "id": "test_1",
+    "question": "What is the mechanism used by the API to prevent conflicting task updates?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Concurrency Control\n\nThe API uses optimistic locking with timestamp comparison to prevent conflicting updates when multiple users modify the same task...."
+  },
+  {
+    "id": "test_2",
+    "question": "What is the specific comparison method used in the optimistic locking mechanism of the API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Concurrency Control\n\nThe API uses optimistic locking with timestamp comparison to prevent conflicting updates when multiple users modify the same task...."
+  },
+  {
+    "id": "test_3",
+    "question": "What is the format of the task object that the API expects to return?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## API Requirements\n\nThe app expects a backend API with endpoints for retrieving all tasks, creating new tasks, getting specific tasks, updating tasks, and deleting tasks. The API should return task o..."
+  },
+  {
+    "id": "test_4",
+    "question": "What are the required endpoints in the backend API for completing CRUD (Create, Read, Update, Delete) operations on tasks?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## API Requirements\n\nThe app expects a backend API with endpoints for retrieving all tasks, creating new tasks, getting specific tasks, updating tasks, and deleting tasks. The API should return task o..."
+  },
+  {
+    "id": "test_5",
+    "question": "What are the benefits of using optimistic updates in the app's data management system?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Data Management\n\nThe app uses optimistic updates for immediate UI updates, auto-refreshes tasks after creation or editing, and detects conflicts during concurrent edits. These features ensure that ..."
+  },
+  {
+    "id": "test_6",
+    "question": "How does the app detect and handle conflicts during concurrent edits?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Data Management\n\nThe app uses optimistic updates for immediate UI updates, auto-refreshes tasks after creation or editing, and detects conflicts during concurrent edits. These features ensure that ..."
+  },
+  {
+    "id": "test_7",
+    "question": "What are the HTTP methods used for each endpoint in this API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## API Endpoints\n\nThe API provides endpoints for getting all tasks, getting specific tasks, creating new tasks, updating existing tasks, and deleting tasks. Each endpoint uses a specific HTTP method a..."
+  },
+  {
+    "id": "test_8",
+    "question": "What information is returned in the response of each endpoint in the API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## API Endpoints\n\nThe API provides endpoints for getting all tasks, getting specific tasks, creating new tasks, updating existing tasks, and deleting tasks. Each endpoint uses a specific HTTP method a..."
+  },
+  {
+    "id": "test_9",
+    "question": "What are the foreign key constraints between the Users and Tasks tables?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_10",
+    "question": "What information is stored in the Users and Tasks tables?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_11",
+    "question": "What is the schema of the Tasks table?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_12",
+    "question": "What information is stored about users in the database?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_13",
+    "question": "What tables is task data stored with foreign keys to?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_14",
+    "question": "What kind of information is in the Users table?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_15",
+    "question": "What is the nature of the foreign key relationship in the Tasks table?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_16",
+    "question": "What schema does the database consist of?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_17",
+    "question": "In what tables is task data along with a direct link to the user stored?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_18",
+    "question": "What types of data does the Tasks table store?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Database Schema\n\nThe database consists of two tables: Users and Tasks. The Users table stores user information, while the Tasks table stores task data with foreign keys to the Users table...."
+  },
+  {
+    "id": "test_19",
+    "question": "How do I add form validation to a task in the Task Manager App?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Introduction to Task Manager App\n\nA React-based task management application that allows users to create, edit, delete, and track tasks with due dates and completion status. The app features task ma..."
+  },
+  {
+    "id": "test_20",
+    "question": "What are the requirements for setting a due date for a task in the Task Manager App?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Introduction to Task Manager App\n\nA React-based task management application that allows users to create, edit, delete, and track tasks with due dates and completion status. The app features task ma..."
+  },
+  {
+    "id": "test_21",
+    "question": "How do I ensure a date is valid before creating a new task?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Form Validation Rules\n\nThe app enforces form validation rules, including required title and description, due date validation to prevent past dates for incomplete tasks, and real-time validation to ..."
+  },
+  {
+    "id": "test_22",
+    "question": "What happens if a user tries to create a task with an invalid due date?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Form Validation Rules\n\nThe app enforces form validation rules, including required title and description, due date validation to prevent past dates for incomplete tasks, and real-time validation to ..."
+  },
+  {
+    "id": "test_23",
+    "question": "What are the steps to install dependencies for the API setup?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Setup and Configuration\n\nTo set up the API, install dependencies, configure environment variables, set up the PostgreSQL database, and run the server. The default port is 5000, but it can be config..."
+  },
+  {
+    "id": "test_24",
+    "question": "How do I configure the PORT environment variable for the API server?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Setup and Configuration\n\nTo set up the API, install dependencies, configure environment variables, set up the PostgreSQL database, and run the server. The default port is 5000, but it can be config..."
+  },
+  {
+    "id": "test_25",
+    "question": "What are the key features of task editing in this app, and how does inline editing work?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Task Management Features\n\nThe app allows users to create tasks with title, description, and due date, edit existing tasks with inline editing, delete tasks with confirmation, and toggle completion ..."
+  },
+  {
+    "id": "test_26",
+    "question": "What kind of visual feedback and statistics are provided for completed and outstanding tasks?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Task Management Features\n\nThe app allows users to create tasks with title, description, and due date, edit existing tasks with inline editing, delete tasks with confirmation, and toggle completion ..."
+  },
+  {
+    "id": "test_27",
+    "question": "What are the specific requirements for setting up the Task Manager API with PostgreSQL?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Task Manager API Introduction\n\nA RESTful API for managing tasks and users built with Node.js, Express, and PostgreSQL. The API features task management, data management, and user integration...."
+  },
+  {
+    "id": "test_28",
+    "question": "What are the available endpoints for user integration in the Task Manager API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Task Manager API Introduction\n\nA RESTful API for managing tasks and users built with Node.js, Express, and PostgreSQL. The API features task management, data management, and user integration...."
+  },
+  {
+    "id": "test_29",
+    "question": "How do I set up the connection pooling for the PostgreSQL database in this API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Tech Stack\n\nThe API is built using Node.js, Express.js, and PostgreSQL, with additional libraries for connection pooling, environment configuration, and CORS enablement...."
+  },
+  {
+    "id": "test_30",
+    "question": "What libraries are used to enable CORS in this API?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Tech Stack\n\nThe API is built using Node.js, Express.js, and PostgreSQL, with additional libraries for connection pooling, environment configuration, and CORS enablement...."
+  },
+  {
+    "id": "test_31",
+    "question": "How does the API validate and sanitize task fields to prevent data corruption?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Data Management API Features\n\nThe API integrates tasks with users, tracks creation and update timestamps, validates task fields, and sanitizes input data. These features ensure that the API provide..."
+  },
+  {
+    "id": "test_32",
+    "question": "Can you provide an example of how the API tracks creation and update timestamps for each task?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Data Management API Features\n\nThe API integrates tasks with users, tracks creation and update timestamps, validates task fields, and sanitizes input data. These features ensure that the API provide..."
+  },
+  {
+    "id": "test_33",
+    "question": "What are the official plugins available for Vite to use with React, and what is the purpose of each?",
+    "expected_file": "task-manager-app-main/client/README.md",
+    "context_snippet": "## Introduction to React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Currently, two official plugins are available: [@vitejs/plugin-reac..."
+  },
+  {
+    "id": "test_34",
+    "question": "How does Fast Refresh work in this React template, and what compilers are used for both plugin options?",
+    "expected_file": "task-manager-app-main/client/README.md",
+    "context_snippet": "## Introduction to React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. Currently, two official plugins are available: [@vitejs/plugin-reac..."
+  },
+  {
+    "id": "test_35",
+    "question": "What specific types of visual feedback are given for completed and incomplete tasks in the application?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## User Experience Features\n\nThe app provides task statistics, visual feedback for completed and incomplete tasks, loading states during API operations, and comprehensive error handling and validation..."
+  },
+  {
+    "id": "test_36",
+    "question": "What loading states are shown during API operations in the application?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## User Experience Features\n\nThe app provides task statistics, visual feedback for completed and incomplete tasks, loading states during API operations, and comprehensive error handling and validation..."
+  },
+  {
+    "id": "test_37",
+    "question": "What HTTP status code indicates a bad request that the API will return if it encounters invalid or missing parameters?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Error Handling\n\nThe API handles errors using HTTP status codes, including 400 for bad requests, 404 for resource not found, 409 for conflicts, and 500 for internal server errors...."
+  },
+  {
+    "id": "test_38",
+    "question": "What kind of error does the API return when it encounters an internal malfunction?",
+    "expected_file": "task-manager-app-main/README.md",
+    "context_snippet": "## Error Handling\n\nThe API handles errors using HTTP status codes, including 400 for bad requests, 404 for resource not found, 409 for conflicts, and 500 for internal server errors...."
+  }
+]

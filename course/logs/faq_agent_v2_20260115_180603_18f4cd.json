@@ -1,0 +1,156 @@
+{
+  "agent_name": "faq_agent_v2",
+  "system_prompt": [
+    "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance."
+  ],
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What conditions are required to receive the certificate at the end of this course?",
+          "timestamp": "2026-01-15T18:05:44.062705+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-01-15T18:05:44.062705+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "2d62e780-b971-4db1-b1a7-34003c16d4fe",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "args": "{\"query\":\"conditions to receive certificate at end of course\"}",
+          "tool_call_id": "nyrcb1ze7",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 483,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 49,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:05:48.417466+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "tool_calls",
+        "timestamp": "2026-01-15T18:05:50+00:00"
+      },
+      "provider_response_id": "chatcmpl-88f3306a-f102-42e2-bd61-fc54f425727d",
+      "finish_reason": "tool_call",
+      "run_id": "2d62e780-b971-4db1-b1a7-34003c16d4fe",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "id": "900f60fd25",
+              "question": "Certificate - Can I follow the course in a self-paced mode and get a certificate?",
+              "sort_order": 15,
+              "content": "No, you can only get a certificate if you finish the course with a \u201clive\u201d cohort. We don't award certificates for the self-paced mode. The reason is you need to peer-review capstone(s) after submitting a project. You can only peer-review projects at the time the course is running.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md"
+            },
+            {
+              "id": "3774a79c13",
+              "question": "Certificate: Do I need to do the homeworks to get the certificate?",
+              "sort_order": 14,
+              "content": "No, as long as you complete the peer-reviewed capstone projects on time, you can receive the certificate. You do not need to do the homeworks if you join late, for example.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/014_3774a79c13_certificate-do-i-need-to-do-the-homeworks-to-get-t.md"
+            },
+            {
+              "id": "6314bc3029",
+              "images": [
+                {
+                  "description": "image #1",
+                  "id": "image_1",
+                  "path": "images/data-engineering-zoomcamp/image_1813f02b.png"
+                }
+              ],
+              "question": "How do I get my certificate?",
+              "sort_order": 46,
+              "content": "There'll be an announcement in Telegram and the course channel for:\n\n- Checking that your full name is displayed correctly on the Certificate (see Editing course profile on the Course Management webpage).\n- Notifying when the grading is completed.\n\nYou will find it in your course profile (you need to be\nlogged it). \n\nFor 2025 the link to the course profile is this:\n\n`https://courses.datatalks.club/de-zoomcamp-2025/enrollment`\n\nFor other editions, change \"2025\" to your edition.\n\nAfter the second announcement, follow instructions in [certificates.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md) on how to generate the Certificate document yourself.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/046_6314bc3029_how-do-i-get-my-certificate.md"
+            },
+            {
+              "id": "542abbcb6a",
+              "question": "wget - ERROR: cannot verify <website> certificate  (MacOS)",
+              "sort_order": 6,
+              "content": "Firstly, make sure that you add `!` before `wget` if you\u2019re running your command in a Jupyter Notebook or CLI. Then, you can check one of these two things (from CLI):\n\n- **Using the Python library wget installed with pip:**\n\n  ```bash\n  python -m wget <url>\n  ```\n\n- **Use the usual command and add `--no-check-certificate` at the end:**\n\n  ```bash\n  !wget <website_url> --no-check-certificate\n  ```",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/006_542abbcb6a_wget-error-cannot-verify-website-certificate-macos.md"
+            },
+            {
+              "id": "9e508f2212",
+              "question": "Course: When does the course start?",
+              "sort_order": 1,
+              "content": "The next cohort starts January 13th, 2025. More info at [DTC](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).\n\n- Register before the course starts using this [link](https://airtable.com/shr6oVXeQvSI5HuWD).\n- Join the [course Telegram channel with announcements](https://t.me/dezoomcamp).\n- Don\u2019t forget to register in DataTalks.Club's Slack and join the channel.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md"
+            }
+          ],
+          "tool_call_id": "nyrcb1ze7",
+          "metadata": null,
+          "timestamp": "2026-01-15T18:05:48.607862+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-01-15T18:05:48.608863+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "2d62e780-b971-4db1-b1a7-34003c16d4fe",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "content": "To receive the certificate at the end of this course, you need to meet the following conditions:\n\n* You must join the course with a \"live\" cohort and not in self-paced mode.\n* You need to complete the peer-reviewed capstone projects on time, but you do not need to do the homeworks.\n* Your full name must be displayed correctly on the Certificate (see Editing course profile on the Course Management webpage).\n* After the grading is completed, you will find the certificate in your course profile, which can be accessed through a link (for 2025, the link is https://courses.datalks.club/de-zoomcamp-2025/enrollment, and for other editions, change \"2025\" to your edition).\n* You can then generate the Certificate document yourself by following the instructions in [certificates.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md).\n\nReferences:\n[DTC](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html)\n[certificates.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md)",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1375,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 245,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:06:03.400867+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "stop",
+        "timestamp": "2026-01-15T18:06:05+00:00"
+      },
+      "provider_response_id": "chatcmpl-32a2760c-4b07-4d8a-a9f5-f8064ffcc181",
+      "finish_reason": "stop",
+      "run_id": "2d62e780-b971-4db1-b1a7-34003c16d4fe",
+      "metadata": null
+    }
+  ],
+  "source": "ai-generated"
+}

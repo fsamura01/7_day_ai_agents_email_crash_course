@@ -1,0 +1,149 @@
+{
+  "agent_name": "faq_agent_v2",
+  "system_prompt": [
+    "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance."
+  ],
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What are some common causes of slow ETLs in data engineering?",
+          "timestamp": "2026-01-15T18:04:30.759260+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-01-15T18:04:30.759260+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "b38939f1-1326-485a-bd1c-53402037660e",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "args": "{\"query\":\"common causes of slow ETLs in data engineering\"}",
+          "tool_call_id": "xt8kzkzrr",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 482,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 81,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:04:36.345929+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "tool_calls",
+        "timestamp": "2026-01-15T18:04:38+00:00"
+      },
+      "provider_response_id": "chatcmpl-92f87942-db8b-4913-a25f-3d1b2701cd61",
+      "finish_reason": "tool_call",
+      "run_id": "b38939f1-1326-485a-bd1c-53402037660e",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "id": "faddbcb675",
+              "question": "Join Error on LocationID: \"Unable to find common supertype for templated argument\"",
+              "sort_order": 77,
+              "content": "No matching signature for operator `=` for argument types: `STRING`, `INT64`\n\n**Signature**: `T1 = T1`\n\n**Error:** Unable to find common supertype for templated argument.\n\n**Solution:**\n\nMake sure the `LocationID` field is of the same type in both tables. If it is in string format in one table, use the following dbt code to convert it to an integer:\n\n```sql\n{{ dbt.safe_cast(\"PULocationID\", api.Column.translate_type(\"integer\")) }} as pickup_locationid\n```",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-4/077_faddbcb675_join-error-on-locationid-unable-to-find-common-sup.md"
+            },
+            {
+              "id": "513410225e",
+              "question": "GCP: Virtual Machine (VM) Size, Slow, Clean Up",
+              "sort_order": 103,
+              "content": "If you are progressing through the course and find that your VM is starting to become slow, you can run the following commands to inspect and detect areas where you can improve:\n\n**Recommended VM Size**\n\n- Start with a 60GB machine. A 30GB machine may not be sufficient, as you might need to restart the project with a larger size.\n\n**Commands to Inspect the Health of Your VM**\n\n- **System Resource Usage**\n  \n  ```bash\n  top\n  htop\n  ```\n  Shows real-time information about system resource usage, including CPU, memory, and processes.\n\n  ```bash\n  free -h\n  ```\n  Displays information about system memory usage and availability.\n\n  ```bash\n  df -h\n  ```\n  Shows disk space usage of file systems.\n\n  ```bash\n  du -h <directory>\n  ```\n  Displays disk usage of a specific directory.\n\n- **Running Processes**\n  \n  ```bash\n  ps aux\n  ```\n  Lists all running processes along with detailed information.\n\n- **Network**\n  \n  ```bash\n  ifconfig\n  ip addr show\n  ```\n  Shows network interface configuration.\n\n  ```bash\n  netstat -tuln\n  ```\n  Displays active network connections and listening ports.\n\n- **Hardware Information**\n  \n  ```bash\n  lscpu\n  ```\n  Displays CPU information.\n\n  ```bash\n  lsblk\n  ```\n  Lists block devices (disks and partitions).\n\n  ```bash\n  lshw\n  ```\n  Lists hardware configuration.\n\n- **User and Permissions**\n  \n  ```bash\n  who\n  ```\n  Shows who is logged on and their activities.\n\n  ```bash\n  w\n  ```\n  Displays information about currently logged-in users and their processes.\n\n- **Package Management**\n  \n  ```bash\n  apt list --installed\n  ```\n  Lists installed packages (for Ubuntu and Debian-based systems).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/103_513410225e_gcp-virtual-machine-vm-size-slow-clean-up.md"
+            },
+            {
+              "id": "4e92a486d1",
+              "question": "Docker: build error: error checking context: 'can't stat '/home/user/repos/data-engineering/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data''.",
+              "sort_order": 25,
+              "content": "This error appeared when running the command:\n\n```bash\ndocker build -t taxi_ingest:v001 .\n```\n\nThe issue often arises because the user ID of the directory `ny_taxi_postgres_data` was changed, causing permission errors when accessing it. To resolve this error, use a directory containing only the necessary files, `Dockerfile` and `ingest_data.py`.\n\nIf you need to change permissions, use the following command on Ubuntu:\n\n```bash\nsudo chown -R $USER dir_path\n```\n\nOn Windows, follow the instructions in this guide: [The Geek Page](https://thegeekpage.com/take-ownership-of-a-file-folder-through-command-prompt-in-windows-10/).\n\nFor more information, refer to this explanation on Stack Overflow: [Docker build error checking context](https://stackoverflow.com/questions/41286028/docker-build-error-checking-context-cant-stat-c-users-username-appdata).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/025_4e92a486d1_docker-build-error-error-checking-context-cant-sta.md"
+            },
+            {
+              "id": "86251abcdf",
+              "question": "Any books or additional resources you recommend?",
+              "sort_order": 38,
+              "content": "Yes to both! Check out this document: [Awesome Data Engineering Resources](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/awesome-data-engineering.md)",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/038_86251abcdf_any-books-or-additional-resources-you-recommend.md"
+            },
+            {
+              "id": "52217fc51b",
+              "question": "Course: I have registered for the Data Engineering Bootcamp. When can I expect to receive the confirmation email?",
+              "sort_order": 4,
+              "content": "You don't need a confirmation email. You're accepted. You can start learning and submitting homework without registering. Registration was just to gauge interest before the start date.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/004_52217fc51b_course-i-have-registered-for-the-data-engineering.md"
+            }
+          ],
+          "tool_call_id": "xt8kzkzrr",
+          "metadata": null,
+          "timestamp": "2026-01-15T18:04:36.578483+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-01-15T18:04:36.579481+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "b38939f1-1326-485a-bd1c-53402037660e",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "content": "Unfortunately, the search didn't return any information about common causes of slow ETLs in data engineering. However, as general guidance, some common causes of slow ETLs include:\n\n* Insufficient hardware resources (e.g., CPU, memory, storage)\n* Poorly optimized database queries or indexing\n* Inefficient data processing algorithms or programming practices\n* Inadequate testing or debugging of ETL processes\n* Data quality issues (e.g., inconsistent or missing data)\n\nFor more information, refer to the \"Awesome Data Engineering Resources\" document: [Awesome Data Engineering Resources](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/awesome-data-engineering.md).",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1769,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 141,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:04:55.751252+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "stop",
+        "timestamp": "2026-01-15T18:04:58+00:00"
+      },
+      "provider_response_id": "chatcmpl-8568b209-443b-4a2e-aff9-545b04014e84",
+      "finish_reason": "stop",
+      "run_id": "b38939f1-1326-485a-bd1c-53402037660e",
+      "metadata": null
+    }
+  ],
+  "source": "ai-generated"
+}

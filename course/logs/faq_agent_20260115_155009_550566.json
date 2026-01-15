@@ -1,0 +1,156 @@
+{
+  "agent_name": "faq_agent",
+  "system_prompt": [
+    "\nYou are a helpful assistant for a course. \n\nUse the search tool to find relevant information from the course materials before answering questions.\n\nIf you can find specific information through search, use it to provide accurate answers.\nIf the search doesn't return relevant results, let the user know and provide general guidance.\n"
+  ],
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what do I need to do for the certificate?",
+          "timestamp": "2026-01-15T15:50:08.759842+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-01-15T15:50:08.759842+00:00",
+      "instructions": "You are a helpful assistant for a course. \n\nUse the search tool to find relevant information from the course materials before answering questions.\n\nIf you can find specific information through search, use it to provide accurate answers.\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "3c39d49e-489c-4b44-8007-90a8b22cbcf2",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "args": "{\"query\":\"certificate requirements\"}",
+          "tool_call_id": "j3stkr3na",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 418,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 15,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T15:50:09.142856+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "tool_calls",
+        "timestamp": "2026-01-15T15:50:11+00:00"
+      },
+      "provider_response_id": "chatcmpl-9c9922a3-2003-4270-9dd8-7d695a89272e",
+      "finish_reason": "tool_call",
+      "run_id": "3c39d49e-489c-4b44-8007-90a8b22cbcf2",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "id": "3774a79c13",
+              "question": "Certificate: Do I need to do the homeworks to get the certificate?",
+              "sort_order": 14,
+              "content": "No, as long as you complete the peer-reviewed capstone projects on time, you can receive the certificate. You do not need to do the homeworks if you join late, for example.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/014_3774a79c13_certificate-do-i-need-to-do-the-homeworks-to-get-t.md"
+            },
+            {
+              "id": "900f60fd25",
+              "question": "Certificate - Can I follow the course in a self-paced mode and get a certificate?",
+              "sort_order": 15,
+              "content": "No, you can only get a certificate if you finish the course with a \u201clive\u201d cohort. We don't award certificates for the self-paced mode. The reason is you need to peer-review capstone(s) after submitting a project. You can only peer-review projects at the time the course is running.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md"
+            },
+            {
+              "id": "6314bc3029",
+              "images": [
+                {
+                  "description": "image #1",
+                  "id": "image_1",
+                  "path": "images/data-engineering-zoomcamp/image_1813f02b.png"
+                }
+              ],
+              "question": "How do I get my certificate?",
+              "sort_order": 46,
+              "content": "There'll be an announcement in Telegram and the course channel for:\n\n- Checking that your full name is displayed correctly on the Certificate (see Editing course profile on the Course Management webpage).\n- Notifying when the grading is completed.\n\nYou will find it in your course profile (you need to be\nlogged it). \n\nFor 2025 the link to the course profile is this:\n\n`https://courses.datatalks.club/de-zoomcamp-2025/enrollment`\n\nFor other editions, change \"2025\" to your edition.\n\nAfter the second announcement, follow instructions in [certificates.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/certificates.md) on how to generate the Certificate document yourself.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/general/046_6314bc3029_how-do-i-get-my-certificate.md"
+            },
+            {
+              "id": "542abbcb6a",
+              "question": "wget - ERROR: cannot verify <website> certificate  (MacOS)",
+              "sort_order": 6,
+              "content": "Firstly, make sure that you add `!` before `wget` if you\u2019re running your command in a Jupyter Notebook or CLI. Then, you can check one of these two things (from CLI):\n\n- **Using the Python library wget installed with pip:**\n\n  ```bash\n  python -m wget <url>\n  ```\n\n- **Use the usual command and add `--no-check-certificate` at the end:**\n\n  ```bash\n  !wget <website_url> --no-check-certificate\n  ```",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/006_542abbcb6a_wget-error-cannot-verify-website-certificate-macos.md"
+            },
+            {
+              "id": "a9081d1a79",
+              "question": "Anaconda to PIP",
+              "sort_order": 133,
+              "content": "To get a pip-friendly `requirements.txt` file from Anaconda, use the following steps:\n\n1. Install pip in your Anaconda environment:\n   ```bash\n   conda install pip\n   ```\n2. Generate the `requirements.txt` file:\n   ```bash\n   pip list --format=freeze > requirements.txt\n   ```\n\nNote:\n- `conda list -d > requirements.txt` will not work.\n- `pip freeze > requirements.txt` may give odd pathing.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/133_a9081d1a79_anaconda-to-pip.md"
+            }
+          ],
+          "tool_call_id": "j3stkr3na",
+          "metadata": null,
+          "timestamp": "2026-01-15T15:50:09.148141+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-01-15T15:50:09.149149+00:00",
+      "instructions": "You are a helpful assistant for a course. \n\nUse the search tool to find relevant information from the course materials before answering questions.\n\nIf you can find specific information through search, use it to provide accurate answers.\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "3c39d49e-489c-4b44-8007-90a8b22cbcf2",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "content": "Based on the search results, to get the certificate, you need to finish the course with a \"live\" cohort and complete the peer-reviewed capstone projects on time. You do not need to do the homeworks. After the course is completed, you will receive an announcement in the course channel and Telegram for checking your full name on the Certificate and notifying when the grading is completed. You can find your Certificate in your course profile, and for 2025, the link to the course profile is https://courses.datatalks.club/de-zoomcamp-2025/enrollment.",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1296,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 119,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T15:50:09.580725+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "stop",
+        "timestamp": "2026-01-15T15:50:11+00:00"
+      },
+      "provider_response_id": "chatcmpl-e7adb881-c138-4c3e-9a76-87ac06e4c513",
+      "finish_reason": "stop",
+      "run_id": "3c39d49e-489c-4b44-8007-90a8b22cbcf2",
+      "metadata": null
+    }
+  ],
+  "source": "user"
+}

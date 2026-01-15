@@ -1,0 +1,168 @@
+{
+  "agent_name": "faq_agent_v2",
+  "system_prompt": [
+    "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance."
+  ],
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What do I need to check in the query settings to resolve this caching issue?",
+          "timestamp": "2026-01-15T18:02:39.600976+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-01-15T18:02:39.601976+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "a7efe5d4-dad4-4d05-bc13-847ed402ede8",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "args": "{\"query\":\"resolving caching issue in query settings\"}",
+          "tool_call_id": "jtbc4ezxf",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 484,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 43,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:02:39.814708+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "tool_calls",
+        "timestamp": "2026-01-15T18:02:42+00:00"
+      },
+      "provider_response_id": "chatcmpl-1b055420-a06e-48bf-a124-88a6e80ac175",
+      "finish_reason": "tool_call",
+      "run_id": "a7efe5d4-dad4-4d05-bc13-847ed402ede8",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "id": "9179edaff3",
+              "question": "Google Cloud BigQuery: Location Problems",
+              "sort_order": 66,
+              "content": "When running a query on BigQuery, you might encounter the error: **\"This table is not on the specified location\"**.\n\nTo resolve this issue, consider the following steps:\n\n- **Check the Locations**: Ensure the locations of your bucket, datasets, and tables are consistent. They should all reside in the same location.\n\n- **Modify Query Settings**:\n  1. Go to the query window.\n  2. Select **More** -> **Query Settings**.\n  3. Select the correct location.\n\n- **Verify Table Paths**: Double-check the paths in your query:\n  1. Click on the table.\n  2. Go to **Details**.\n  3. Copy the correct path.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-4/066_9179edaff3_google-cloud-bigquery-location-problems.md"
+            },
+            {
+              "id": "8f9f91b4de",
+              "question": "GCP - Windows Google Cloud SDK install issue:",
+              "sort_order": 105,
+              "content": "If you are encountering installation trouble with the Google Cloud SDK on Windows and receiving the following error:\n\n```\nThese credentials will be used by any library that requests Application Default Credentials (ADC).\n\nWARNING:\n\nCannot find a quota project to add to ADC. You might receive a \"quota exceeded\" or \"API not enabled\" error. Run $ gcloud auth application-default set-quota-project to add a quota project.\n```\n\nTry these steps:\n\n1. Reinstall the SDK using the unzip file \"install.bat\".\n2. Check the installation by running `gcloud version`.\n3. Run `gcloud init` to set up your project.\n4. Execute `gcloud auth application-default login`.\n\nFor detailed instructions, refer to the following guide: [Windows SDK Installation Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/windows.md)",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/105_8f9f91b4de_gcp-windows-google-cloud-sdk-install-issue.md"
+            },
+            {
+              "id": "3549528659",
+              "question": "Docker: Docker won't start or is stuck in settings (Windows 10 / 11)",
+              "sort_order": 15,
+              "content": "Ensure you are running the latest version of Docker for Windows. Download the updated version from [Docker's official site](https://docs.docker.com/desktop/install/windows-install/). If the upgrade option in the menu doesn't work, uninstall and reinstall with the latest version.\n\nIf Docker is stuck on starting, try switching the containers by right-clicking the [docker symbol](https://imgur.com/vsVUAzK) from the running programs, and switch the containers from Windows to Linux or vice versa.\n\nFor Windows 10 / 11 Pro Edition:\n\n- **Hyper-V Backend:** ensure Hyper-V is enabled by following this [tutorial](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/).\n- **WSL2 Backend:** follow the steps detailed in this [tutorial](https://pureinfotech.com/install-wsl-windows-11/).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/015_docker-docker-wont-start-or.md"
+            },
+            {
+              "id": "8bfd81c403",
+              "images": [
+                {
+                  "description": "image #1",
+                  "id": "image_1",
+                  "path": "images/data-engineering-zoomcamp/image_d9986dba.png"
+                },
+                {
+                  "description": "image #2",
+                  "id": "image_2",
+                  "path": "images/data-engineering-zoomcamp/image_e9103d16.png"
+                }
+              ],
+              "question": "GCP BQ: When querying two different tables, external and materialized, why do you get the same result with count(distinct(*))?",
+              "sort_order": 22,
+              "content": "You need to uncheck cache preferences in query settings\n\n<{IMAGE:image_1}>\n\n<{IMAGE:image_2}>",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-3/022_8bfd81c403_gcp-bq-when-querying-two-different-tables-external.md"
+            },
+            {
+              "id": "ec6d89a462",
+              "images": [
+                {
+                  "description": "image #1",
+                  "id": "image_1",
+                  "path": "images/data-engineering-zoomcamp/image_ee3efac5.png"
+                }
+              ],
+              "question": "Access Denied: Table yellow_tripdata: User does not have permission to query table yellow_tripdata, or perhaps it does not exist in location US.",
+              "sort_order": 58,
+              "content": "<{IMAGE:image_1}>\n\n### Error Details\n\n```\nDatabase Error in model stg_yellow_tripdata (models/staging/stg_yellow_tripdata.sql)\n\nAccess Denied: Table taxi-rides-ny-339813-412521:trips_data_all.yellow_tripdata: User does not have permission to query table taxi-rides-ny-339813-412521:trips_data_all.yellow_tripdata, or perhaps it does not exist in location US.\n\ncompiled Code at target/run/taxi_rides_ny/models/staging/stg_yellow_tripdata.sql\n```\n\n### Solution\n\n1. **Branch Verification**:\n   - Ensure you are working on the correct branch. If not, switch to the appropriate branch.\n   \n2. **Schema Configuration**:\n   - Edit the `04-analytics-engineering/taxi_rides_ny/models/staging/schema.yml` file.\n   - Ensure the configuration is correct:\n     \n     ```yaml\n     sources:\n     - name: staging\n       database: your_database_name\n     ```\n\n3. **Custom Branch Setup in dbt Cloud**:\n   - If the error persists, consider running the dbt job on a custom branch:\n     \n     - Navigate to the environment settings in dbt Cloud.\n     - In General settings, select \"Only run on a custom branch\".\n     - Enter the name of your custom branch (e.g., HW).\n     - Click Save.",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-4/058_ec6d89a462_access-denied-table-yellow_tripdata-user-does-not.md"
+            }
+          ],
+          "tool_call_id": "jtbc4ezxf",
+          "metadata": null,
+          "timestamp": "2026-01-15T18:02:39.988234+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-01-15T18:02:39.989232+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "a7efe5d4-dad4-4d05-bc13-847ed402ede8",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "content": "Based on the search results, it seems that you need to check the \"cache preferences\" in the query settings to resolve the caching issue. Specifically, you need to uncheck the cache preferences to get the correct results when querying two different tables in BigQuery. \n\nPlease refer to [GCP BQ: When querying two different tables, external and materialized, why do you get the same result with count(distinct(*))?](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/module-3/022_8bfd81c403_gcp-bq-when-querying-two-different-tables-external.md) for more information.",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1879,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 140,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T18:02:54.767386+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "stop",
+        "timestamp": "2026-01-15T18:02:57+00:00"
+      },
+      "provider_response_id": "chatcmpl-e2b29a20-5829-46ad-98a4-0de29d097463",
+      "finish_reason": "stop",
+      "run_id": "a7efe5d4-dad4-4d05-bc13-847ed402ede8",
+      "metadata": null
+    }
+  ],
+  "source": "ai-generated"
+}

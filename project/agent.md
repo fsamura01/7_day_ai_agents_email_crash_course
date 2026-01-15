@@ -63,3 +63,12 @@ Fix: The response logic was updated to use result.output instead of result.data 
 ### 3. Windows Terminal Encoding Crash
 Error: charmap codec cannot encode character u2713.
 Fix: Unicode characters like checkmarks were replaced with plain text markers like [OK] to prevent crashes on Windows terminals.
+
+### 4. Notebook Experimentation Issues
+During development in `notebook-Copy1.ipynb`, several critical bugs were identified in the chunking and search implementation.
+
+- **Variable Mismatch**: Cell 103 originally used `task_manager_chunks` instead of `task_manager_app_chunks`, causing a `NameError`.
+- **Missing VectorSearch**: The `VectorSearch` class was not defined in the notebook scope.
+- **Empty Category Results**: Search results by category were returning 0 results due to missing metadata during the chunking phase.
+
+*Detailed fixes and code snippets are documented in [notebook_issues_and_fixes.md](file:///d:/Learning/7_day_ai_agents_email_crash_course/project/notebook_issues_and_fixes.md).*

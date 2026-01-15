@@ -1,0 +1,26 @@
+D:\Learning\7_day_ai_agents_email_crash_course\project\evaluate_batch.py:48: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  eval_dict = evaluation.dict() if hasattr(evaluation, 'dict') else (
+D:\Learning\7_day_ai_agents_email_crash_course\project\evaluate_batch.py:48: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  eval_dict = evaluation.dict() if hasattr(evaluation, 'dict') else (
+[OK] Loaded keyword index from chunks.json
+Loading embedding model and vectors...
+[OK] Loaded semantic index from embeddings.npy
+Starting batch evaluation for 2 test cases...
+
+--- Test 1/2 ---
+Question: What is the mechanism used by the API to prevent conflicting task updates?
+Running agent...
+[OK] Interaction logged to logs\repo_documentation_agent_20260115_195312_ae79da.json
+Evaluating log: logs\repo_documentation_agent_20260115_195312_ae79da.json...
+Judge Verdict: 5/6 checks passed.
+Summary: The agent's response is of high quality, following instructions, providing a relevant and clear answ...
+
+--- Test 2/2 ---
+Question: What is the specific comparison method used in the optimistic locking mechanism of the API?
+Running agent...
+[OK] Interaction logged to logs\repo_documentation_agent_20260115_195314_34c732.json
+Evaluating log: logs\repo_documentation_agent_20260115_195314_34c732.json...
+Judge Verdict: 5/6 checks passed.
+Summary: The agent's response is accurate, relevant, and follows the system instructions....
+
+[OK] Evaluation complete. Detailed results saved to evaluation_results.json

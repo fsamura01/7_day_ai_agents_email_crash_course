@@ -1,0 +1,149 @@
+{
+  "agent_name": "faq_agent_v2",
+  "system_prompt": [
+    "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance."
+  ],
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do I use docker on windows?",
+          "timestamp": "2026-01-15T15:57:09.233989+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-01-15T15:57:09.234989+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "a78edd07-b908-457d-8580-9d8023e33a65",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "args": "{\"query\":\"Docker on Windows\"}",
+          "tool_call_id": "kntvfdvp1",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 476,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 82,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T15:57:09.740277+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "tool_calls",
+        "timestamp": "2026-01-15T15:57:12+00:00"
+      },
+      "provider_response_id": "chatcmpl-f27622ee-21c8-48d9-b290-e96d433da131",
+      "finish_reason": "tool_call",
+      "run_id": "a78edd07-b908-457d-8580-9d8023e33a65",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "id": "46dbe4810d",
+              "question": "Docker - error during connect: In the default daemon configuration on Windows, the docker client must be run with elevated privileges",
+              "sort_order": 11,
+              "content": "If you get this error:\n\n```\ndocker: error during connect: In the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect.: Post \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/containers/create\": open //./pipe/docker_engine: The system cannot find the file specified.\nSee 'docker run --help'.\n```\n\nTo resolve it on Windows, follow these guidelines based on your version:\n\n**Windows 10 Pro / 11 Pro Users**:\n\n* Ensure Hyper-V is enabled, as Docker can use it as a backend.\n* Follow the [Enable Hyper-V Option on Windows 10 / 11](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/) tutorial.\n\n**Windows 10 Home / 11 Home Users**:\n\n* The 'Home' version doesn't support Hyper-V, so use WSL2 (Windows Subsystem for Linux).\n* Refer to [install WSL on Windows 11](https://pureinfotech.com/install-wsl-windows-11/) for detailed instructions.\n\nIf you encounter the \"WslRegisterDistribution failed with error: 0x800701bc\" error:\n\n- Update the WSL2 Linux Kernel by following the guidelines at [GitHub: WSL Issue 5393](https://github.com/microsoft/WSL/issues/5393).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/011_46dbe4810d_docker-error-during-connect-in-the-default-daemon.md"
+            },
+            {
+              "id": "3549528659",
+              "question": "Docker: Docker won't start or is stuck in settings (Windows 10 / 11)",
+              "sort_order": 15,
+              "content": "Ensure you are running the latest version of Docker for Windows. Download the updated version from [Docker's official site](https://docs.docker.com/desktop/install/windows-install/). If the upgrade option in the menu doesn't work, uninstall and reinstall with the latest version.\n\nIf Docker is stuck on starting, try switching the containers by right-clicking the [docker symbol](https://imgur.com/vsVUAzK) from the running programs, and switch the containers from Windows to Linux or vice versa.\n\nFor Windows 10 / 11 Pro Edition:\n\n- **Hyper-V Backend:** ensure Hyper-V is enabled by following this [tutorial](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/).\n- **WSL2 Backend:** follow the steps detailed in this [tutorial](https://pureinfotech.com/install-wsl-windows-11/).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/015_docker-docker-wont-start-or.md"
+            },
+            {
+              "id": "b2eabcd7dc",
+              "question": "Docker: Setting up Docker on Mac",
+              "sort_order": 20,
+              "content": "For setting up Docker on macOS, you have two main options:\n\n1. **Download from Docker Website:**\n   - Visit the official Docker website and download the Docker Desktop for Mac as a `.dmg` file. This method is generally reliable and avoids issues related to licensing changes.\n\n2. **Using Homebrew:**\n   - Be aware that there can be conflicts when installing with Homebrew, especially between Docker Desktop and command-line tools. To avoid issues:\n     \n     - Install Docker Desktop first.\n     - Then install the command line tools.\n\n   - Commands:\n     \n     ```bash\n     brew install --cask docker\n     ```\n     \n     ```bash\n     brew install docker docker-compose\n     ```\n\n   - For more detailed issues related to `brew install`, refer to this [Issue](https://github.com/Homebrew/brew/issues/16309). \n\nFor more details, you can check the article on [Setting up Docker in macOS](https://medium.com/@vivekslair/setting-up-docker-in-macos-ee36d37b3be2).",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/020_b2eabcd7dc_docker-setting-up-docker-on-mac.md"
+            },
+            {
+              "id": "1b727dde32",
+              "question": "Docker: Docker not installable on Ubuntu",
+              "sort_order": 36,
+              "content": "On some versions of Ubuntu, the `snap` command can be used to install Docker.\n\n```bash\nsudo snap install docker\n```",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/036_1b727dde32_docker-docker-not-installable-on-ubuntu.md"
+            },
+            {
+              "id": "4c8959502e",
+              "question": "Docker: Cannot pip install on Docker container (Windows)",
+              "sort_order": 18,
+              "content": "You may encounter this error:\n\n```\nRetrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7efe331cf790>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/pandas/\n```\n\nPossible solution:\n\nRun the following command:\n\n```bash\nwinpty docker run -it --dns=8.8.8.8 --entrypoint=bash python:3.9\n```",
+              "filename": "faq-main/_questions/data-engineering-zoomcamp/module-1/018_4c8959502e_docker-cannot-pip-install-on-docker-container-wind.md"
+            }
+          ],
+          "tool_call_id": "kntvfdvp1",
+          "metadata": null,
+          "timestamp": "2026-01-15T15:57:09.774006+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-01-15T15:57:09.775234+00:00",
+      "instructions": "You are a helpful assistant for a course.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"faq-main\" by the full path to the GitHub repository: \"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request",
+      "run_id": "a78edd07-b908-457d-8580-9d8023e33a65",
+      "metadata": null
+    },
+    {
+      "parts": [
+        {
+          "content": "Based on the search results, the answer to your question \"how do I use docker on windows\" is as follows:\n\nTo use Docker on Windows, you need to ensure that Hyper-V is enabled. If you are using Windows 10 Home or 11 Home, you will need to use WSL2 (Windows Subsystem for Linux) instead.\n\nHere are the detailed steps:\n\n1. Ensure Hyper-V is enabled: You can do this by following the instructions on this [tutorial](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/).\n2. Install Docker Desktop: You can download the Docker Desktop for Windows from the official Docker website.\n3. Install the command-line tools: If you are using Homebrew, you can install the command-line tools using the following command:\n```bash\nbrew install --cask docker\n```\n4. Run the Docker commands: Once you have installed Docker Desktop and the command-line tools, you can run the Docker commands using the following command:\n```bash\ndocker run -it --dns=8.8.8.8 --entrypoint=bash python:3.9\n```\nThis will give you a bash shell in a Docker container with Python 3.9 installed.\n\nReferences:\n\n* [Enable Hyper-V Option on Windows 10 / 11](https://www.c-sharpcorner.com/article/install-and-configured-docker-desktop-in-windows-10/)\n* [Setting up Docker in macOS](https://medium.com/@vivekslair/setting-up-docker-in-macos-ee36d37b3be2)\n* [GitHub: WSL Issue 5393](https://github.com/microsoft/WSL/issues/5393)",
+          "id": null,
+          "provider_details": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1754,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 360,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-01-15T15:57:10.694966+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_url": "https://api.groq.com",
+      "provider_details": {
+        "finish_reason": "stop",
+        "timestamp": "2026-01-15T15:57:13+00:00"
+      },
+      "provider_response_id": "chatcmpl-eb2fa56e-87de-4c52-937a-56a1a103711a",
+      "finish_reason": "stop",
+      "run_id": "a78edd07-b908-457d-8580-9d8023e33a65",
+      "metadata": null
+    }
+  ],
+  "source": "user"
+}
