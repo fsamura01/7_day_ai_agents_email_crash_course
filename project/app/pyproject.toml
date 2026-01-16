@@ -1,0 +1,21 @@
+[project]
+name = "repo-docs-agent"
+version = "0.1.0"
+description = "Modular GitHub documentation agent"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "minsearch>=0.0.5",
+    "openai>=1.108.2",
+    "pydantic-ai==1.0.9",
+    "python-frontmatter>=1.1.0",
+    "requests>=2.32.5",
+    "scikit-learn",
+    "pandas",
+    "numpy<2.0.0",
+    "sentence-transformers==3.3.1",
+    "transformers==4.47.1",
+    "torch==2.5.1",
+    "python-dotenv",
+    "streamlit>=1.53.0",
+]

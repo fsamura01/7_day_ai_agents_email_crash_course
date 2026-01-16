@@ -1,4 +1,4 @@
-from data_preparation import read_repo_data
+from ingest import read_repo_data
 from intelligent_chunking import process_documents_intelligent, setup_llm_client
 
 

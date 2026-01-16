@@ -8,7 +8,7 @@ Here is where the major functions are called in `project/run_pipeline.py`.
 
 ### Step 1: Fetching (Line 62)
 Function: read_repo_data
-Location: Defined in data_preparation.py
+Location: Defined in ingest.py
 Purpose: Connects to GitHub, downloads the repository, and extracts raw text from all Markdown files.
 
 ### Step 2: Chunking (Line 70)

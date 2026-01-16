@@ -15,7 +15,7 @@ Example:
 
 import argparse
 import json
-from data_preparation import read_repo_data
+from ingest import read_repo_data
 from chunking import chunk_documents
 from search import Index, VectorSearch, hybrid_search
 

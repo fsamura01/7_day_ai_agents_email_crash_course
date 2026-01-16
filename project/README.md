@@ -10,11 +10,11 @@ This directory contains the core scripts for fetching and processing GitHub repo
 
 ## Scripts
 
-### 1. `data_preparation.py`
+### 1. `ingest.py`
 Fetches markdown files from GitHub repositories.
 
 ```python
-from data_preparation import read_repo_data
+from ingest import read_repo_data
 
 docs = read_repo_data('owner', 'repo-name')
 ```

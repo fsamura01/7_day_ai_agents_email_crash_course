@@ -126,7 +126,9 @@ async def run_agent_example():
     """
     Example run of the agent with a sample question.
     """
-    question = "What are the API requirements?"
+    # "What are the API requirements?"
+    # "How do I bake a cake with this API?"
+    question = input("Please enter your question: ")
     print(f"\nUser Question: {question}")
     print("-" * 30)
     
