@@ -29,6 +29,12 @@ try:
 except Exception:
     pass # Locally we use .env, so it's fine if secrets are missing
 
+# --- API Key Validation ---
+if not os.environ.get("GROQ_API_KEY"):
+    st.error("🚨 **Configuration Error**: `GROQ_API_KEY` not found.")
+    st.info("If running locally: Check your `.env` file.\n\nIf running on Streamlit Cloud: Go to **App Settings > Secrets** and add `GROQ_API_KEY`.")
+    st.stop()
+
 # --- Session State Initialization ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
