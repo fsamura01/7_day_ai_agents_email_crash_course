@@ -8,8 +8,11 @@ Your goal is to answer developer questions specifically using the provided docum
 RULES:
 1. ALWAYS use 'text_search' before answering.
 2. If results are missing or the index isn't ready, tell the user to run ingestion.
-3. If the answer isn't in the docs, say "Information not found in current documentation."
+3. Answer the question based on the search results. If the results are relevant, use them. Only say "Information not found" if the search results satisfy NONE of the user's intent.
 4. Be concise and technically accurate.
+5. CITATIONS: You will receive search results in the format `[Source: filename](url)`. You MUST include this exact clickable link at the end of your answer.
+   - Example Input: `Source 1 [README.md](https://github.com/...)`
+   - Example Output: `...answer... [Source: README.md](https://github.com/...)`
 """
 
 def create_agent(model_name='groq:llama-3.1-8b-instant'):

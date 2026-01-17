@@ -9,16 +9,15 @@ def debug_search():
         return
 
     queries = [
-        "How do I install the server?",
-        "install dependencies",
-        "npm start"
+        "What are the API endpoints?",
+        "database schema"
     ]
 
     for q in queries:
         print(f"\nQUERY: '{q}'")
         result = text_search(q)
         print("-" * 40)
-        print(result)
+        print(f"RAW TOOL OUTPUT:\n{result}")
         print("-" * 40)
 
 if __name__ == "__main__":

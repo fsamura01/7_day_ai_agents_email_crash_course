@@ -31,7 +31,13 @@ def read_repo_data(repo_owner, repo_name):
                 content = f_in.read().decode('utf-8', errors='ignore')
                 post = frontmatter.loads(content)
                 data = post.to_dict()
-                data['filename'] = filename
+                
+                # Strip top-level directory from zip filename for cleaner display and URL
+                # Example: 'repo-main/README.md' -> 'README.md'
+                clean_filename = '/'.join(filename.split('/')[1:])
+                data['filename'] = clean_filename
+                data['url'] = f"https://github.com/{repo_owner}/{repo_name}/blob/main/{clean_filename}"
+                
                 repository_data.append(data)
         except Exception as e:
             print(f"Error processing {filename}: {e}")

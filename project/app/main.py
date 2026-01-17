@@ -5,7 +5,8 @@ import json
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+# override=True ensures we use the valid key in .env, ignoring any stale/invalid keys in the terminal
+load_dotenv(override=True)
 
 from ingest import run_ingestion
 from search_tools import initialize_search_indexes

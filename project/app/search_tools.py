@@ -116,9 +116,9 @@ def text_search(query: str) -> str:
         
     try:
         if _v_index and _model:
-            results = hybrid_search(query, _index, _v_index, _model, num_results=2)
+            results = hybrid_search(query, _index, _v_index, _model, num_results=5)
         else:
-            results = _index.search(query, num_results=2)
+            results = _index.search(query, num_results=5)
             
         if not results:
             return "No relevant documentation found."
@@ -126,9 +126,10 @@ def text_search(query: str) -> str:
         formatted = []
         for i, res in enumerate(results, 1):
             source = res.get('filename', 'Unknown')
+            url = res.get('url', '#')
             content = res.get('content', 'No content')
             snippet = content[:600] + "..." if len(content) > 600 else content
-            formatted.append(f"Source {i} [{source}]:\n{snippet}\n")
+            formatted.append(f"Source {i} [{source}]({url}):\n{snippet}\n")
         return "\n".join(formatted)
     except Exception as e:
         return f"Error during search: {str(e)}"
